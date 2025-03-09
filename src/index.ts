@@ -44,6 +44,8 @@ app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 });
 
-app.listen(8000, () => {
-  console.log("server running on localhost:8000");
+const PORT = process.env.PORT || 8000;  // Use Render's assigned port
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
